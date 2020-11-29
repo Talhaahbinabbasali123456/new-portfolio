@@ -1,0 +1,87 @@
+//===========================================
+// -Navbar start
+//===========================================
+.navbar {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px 0;
+    overflow: hidden;
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: calc(100% / 2);
+        list-style: circle;
+        padding: 0 30px;
+    }
+    @include mq( md, "max") {
+        ul {
+            display: none;
+        }
+    }
+}
+
+.navbar__items {
+    a {
+        color: white;
+    }
+}
+
+
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 100%;
+    width: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    height: 100vh;
+    z-index: 3;
+    background-color: $primary;
+    transition: 500ms all ease-in-out;
+
+    &.active {
+        width: 60%;
+        left: 0;
+    }
+    @include mq( md, "max") {
+        &.active {
+            width: 100%;
+        }
+        .navbar__items {
+            a {
+                text-align: center;
+            }
+        }
+        .sidebar__content.sidebar__content {
+            padding-left: 0px;
+        }
+    }
+}
+.sidebar__content.sidebar__content {
+    width: 100%;
+    padding-left: 100px;
+    li {
+        a {
+            font-size: 30px;
+            display: block;
+            color: white;
+            white-space: nowrap;
+            padding: 10px 20px;
+        }
+    }
+}
+
+//===========================================
+// -Navbar end
+//===========================================

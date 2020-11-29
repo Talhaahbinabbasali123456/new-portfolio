@@ -1,0 +1,20 @@
+//===========================================
+// -Helper Classes start
+//===========================================
+
+.center {
+  margin: auto;
+}
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @include mq( md, "max") {
+    flex-wrap: wrap;
+  }
+}
+
+//===========================================
+// -Helper Classes end
+//===========================================
